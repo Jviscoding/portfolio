@@ -1,0 +1,15 @@
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-dark-950);
+  font-family: var(--font-sans);
+  color: var(--text-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: red;
+}

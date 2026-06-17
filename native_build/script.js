@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // 1. Initialize Vector/Lucide Icons Icons
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Mobile Responsive Menu Controller
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mouseTracker = document.querySelector(".mouse-tracker")
+
     let isMenuOpen = false;
 
     if (menuBtn && mobileMenu) {
@@ -84,4 +86,30 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionRevealObserver.observe(element);
     });
 
+
+
+    let targetX = window.innerWidth / 2;
+    let targetY = window.innerHeight / 2;
+
+    let currentX = targetX;
+    let currentY = targetY;
+
+    document.addEventListener('mousemove', (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+    });
+
+    function animate() {
+
+        // Lerp
+        currentX += (targetX - currentX) * 1;
+        currentY += (targetY - currentY) * 1;
+
+        mouseTracker.style.left = `${currentX}px`;
+        mouseTracker.style.top = `${currentY}px`;
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
 });
