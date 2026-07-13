@@ -6,18 +6,15 @@
     <meta name="description" content="John Vincent Liguit is a backend-focused full-stack developer who builds and studies real-world software systems.">
     <meta name="theme-color" content="#0b0e14">
     <title>Jviscoding | Systems in Progress</title>
-    <script>
-        (() => {
-            const savedTheme = localStorage.getItem('jvis-theme');
-            const preferredTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-            document.documentElement.dataset.theme = savedTheme || preferredTheme;
-        })();
-    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Injecting Lucide Icon Library -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -26,13 +23,14 @@
 
     <header class="site-header">
         <div class="shell header-shell">
-            <a class="brand" href="#home" aria-label="Jviscoding home">
+            <a class="brand" href="#home" aria-label="Jviscoding Home">
                 <span class="brand-mark">JV</span>
                 <span>jviscoding<span class="brand-dot">.</span></span>
             </a>
-            <nav class="desktop-nav" aria-label="Primary navigation">
+            <nav class="desktop-nav" aria-label="Main Navigation">
                 <a href="#work">Work</a>
                 <a href="#architecture">Architecture</a>
+                <a href="#skills">Skills</a>
                 <a href="#learning">Learning</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -41,13 +39,21 @@
                     <i data-lucide="command" aria-hidden="true"></i><span class="shortcut-key">Ctrl K</span>
                 </button>
                 <button id="theme-toggle" class="theme-toggle" type="button" role="switch" aria-label="Switch color theme" aria-checked="false">
-                    <span class="theme-toggle-track"><i data-lucide="sun" class="sun-icon" aria-hidden="true"></i><i data-lucide="moon" class="moon-icon" aria-hidden="true"></i><span class="theme-toggle-thumb"></span></span>
+                    <span class="theme-toggle-track">
+                        <i data-lucide="sun" class="sun-icon" aria-hidden="true"></i>
+                        <i data-lucide="moon" class="moon-icon" aria-hidden="true"></i>
+                        <span class="theme-toggle-thumb"></span>
+                    </span>
                 </button>
-                <button id="menu-toggle" class="icon-button menu-toggle" type="button" aria-label="Open navigation" aria-controls="mobile-menu" aria-expanded="false"><i data-lucide="menu" aria-hidden="true"></i></button>
+                <button id="menu-toggle" class="icon-button menu-toggle" type="button" aria-label="Open Navigation" aria-controls="mobile-menu" aria-expanded="false"><i data-lucide="menu" aria-hidden="true"></i></button>
             </div>
         </div>
-        <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation">
-            <a href="#work">Work</a><a href="#architecture">Architecture</a><a href="#learning">Learning</a><a href="#contact">Contact</a>
+        <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile Navigation">
+            <a href="#work">Work</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#skills">Skills</a>
+            <a href="#learning">Learning</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
@@ -55,30 +61,80 @@
         <section id="home" class="hero section-grid" aria-labelledby="hero-title">
             <div class="shell hero-layout">
                 <div class="hero-copy reveal">
-                    <p class="eyebrow"><span class="status-led"></span> Open to building useful systems</p>
-                    <h1 id="hero-title">I enjoy the work <span>beneath the surface.</span></h1>
-                    <p class="hero-lede">John Vincent Liguit is a full-stack developer with a backend focus. I build applications, study how their pieces fit together, and keep moving toward stronger software engineering judgment.</p>
+                    <p class="eyebrow"><span class="status-led"></span> Available for systems work</p>
+                    <h1 id="hero-title">I study systems and write code <span>beneath the surface.</span></h1>
+                    <p class="hero-lede">I am John Vincent Liguit, a full-stack developer with a strong focus on backend operations. I build platforms, analyze workflows, and study backend architecture parameters in public.</p>
                     <div class="hero-actions">
-                        <a class="button button-primary magnetic" href="#work">Explore selected work <i data-lucide="arrow-down-right" aria-hidden="true"></i></a>
-                        <button class="button button-quiet command-trigger" type="button"><i data-lucide="command" aria-hidden="true"></i> Open command palette</button>
+                        <a class="button button-primary" href="#work">View Case Studies <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+                        <button class="button button-quiet command-trigger" type="button"><i data-lucide="command" aria-hidden="true"></i> Open Workspace Terminal</button>
                     </div>
-                    <dl class="hero-signals" aria-label="Current areas of interest">
-                        <div><dt>Building</dt><dd>Data-driven product workflows</dd></div>
-                        <div><dt>Studying</dt><dd>Systems, infrastructure, architecture</dd></div>
+                    <dl class="hero-signals" aria-label="Current Areas of focus">
+                        <div>
+                            <dt>Building</dt>
+                            <dd>Structured database architectures & REST APIs</dd>
+                        </div>
+                        <div>
+                            <dt>Exploring</dt>
+                            <dd>Performance caching, local virtualization, and queues</dd>
+                        </div>
                     </dl>
                 </div>
 
-                <aside class="system-console reveal reveal-delay-1" aria-label="Engineering workspace overview">
-                    <div class="console-titlebar"><div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div><span>workspace / system-overview</span><span class="console-live">live context</span></div>
-                    <div class="console-body">
-                        <div class="console-heading"><div><p class="console-kicker">CURRENT WORKSPACE</p><h2>Inventory system</h2></div><span class="system-pill"><span></span> evolving</span></div>
-                        <div class="service-list">
-                            <div class="service-row"><span class="service-icon blue"><i data-lucide="monitor" aria-hidden="true"></i></span><div><strong>React client</strong><small>Feature-based UI and typed workflows</small></div><span class="service-state">ready</span></div>
-                            <div class="service-row"><span class="service-icon violet"><i data-lucide="braces" aria-hidden="true"></i></span><div><strong>REST API</strong><small>Authentication and business rules</small></div><span class="service-state">mapped</span></div>
-                            <div class="service-row"><span class="service-icon green"><i data-lucide="database" aria-hidden="true"></i></span><div><strong>Data layer</strong><small>PostgreSQL and managed services</small></div><span class="service-state">modeled</span></div>
-                            <div class="service-row"><span class="service-icon amber"><i data-lucide="container" aria-hidden="true"></i></span><div><strong>Local environment</strong><small>Docker-led development workflow</small></div><span class="service-state">learning</span></div>
+                <aside class="system-console reveal reveal-delay-1" aria-label="Interactive Workspace Panel">
+                    <div class="console-titlebar">
+                        <div class="window-controls" aria-hidden="true">
+                            <span></span><span></span><span></span>
                         </div>
-                        <div class="console-log" aria-label="Current engineering notes"><span class="log-prompt">&gt;</span><span>Design the boundary before the feature.</span><span class="log-cursor" aria-hidden="true"></span></div>
+                        <span>workspace/telemetry.json</span>
+                        <span class="console-live">System Active</span>
+                    </div>
+                    <div class="console-body">
+                        <div class="console-heading">
+                            <div>
+                                <p class="console-kicker">Local Services</p>
+                                <h2>Stack Context</h2>
+                            </div>
+                            <span class="system-pill">Online</span>
+                        </div>
+                        <div class="service-list">
+                            <div class="service-row">
+                                <span class="service-icon blue"><i data-lucide="monitor" aria-hidden="true"></i></span>
+                                <div>
+                                    <strong>React Frontend</strong>
+                                    <small>Component boundaries, modular layouts</small>
+                                </div>
+                                <span class="service-state">ready</span>
+                            </div>
+                            <div class="service-row">
+                                <span class="service-icon violet"><i data-lucide="braces" aria-hidden="true"></i></span>
+                                <div>
+                                    <strong>REST Web API</strong>
+                                    <small>Validation structures, session guards</small>
+                                </div>
+                                <span class="service-state">active</span>
+                            </div>
+                            <div class="service-row">
+                                <span class="service-icon green"><i data-lucide="database" aria-hidden="true"></i></span>
+                                <div>
+                                    <strong>PostgreSQL DB</strong>
+                                    <small>Relational schema model, query tracking</small>
+                                </div>
+                                <span class="service-state">syncing</span>
+                            </div>
+                            <div class="service-row">
+                                <span class="service-icon amber"><i data-lucide="container" aria-hidden="true"></i></span>
+                                <div>
+                                    <strong>Docker Environments</strong>
+                                    <small>Container virtualization environments</small>
+                                </div>
+                                <span class="service-state">mapping</span>
+                            </div>
+                        </div>
+                        <div class="console-log">
+                            <span class="log-prompt">&gt;</span>
+                            <span>Design boundaries cleanly before implementing features.</span>
+                            <span class="log-cursor" aria-hidden="true"></span>
+                        </div>
                     </div>
                 </aside>
             </div>
@@ -86,78 +142,488 @@
 
         <section id="about" class="about section-space" aria-labelledby="about-title">
             <div class="shell split-layout">
-                <div class="section-intro reveal"><p class="eyebrow">01 / Perspective</p><h2 id="about-title">Curious about how a product actually works.</h2></div>
-                <div class="about-content reveal reveal-delay-1"><p class="large-copy">I am drawn to the invisible parts of software: the data model behind a screen, the API boundary between services, the validation that protects a workflow, and the trade-offs that appear as an application grows.</p><p>I work across frontend and backend because useful systems need both. My strongest interest is backend development, where I can think through architecture, REST APIs, databases, authentication, performance, and the infrastructure that supports a reliable experience.</p><p>I do not claim to have all the answers or to be a software engineer already. I am continuously studying software engineering while building real systems, documenting what I learn, and making the next implementation more deliberate than the last.</p></div>
+                <div class="section-intro reveal">
+                    <p class="eyebrow">01 / Perspective</p>
+                    <h2 id="about-title">Understanding the layers beneath the application interface.</h2>
+                </div>
+                <div class="about-content reveal reveal-delay-1">
+                    <p class="large-copy">I am naturally curious about the invisible parts of applications: the relational schema, the API boundary safety, and how data changes state dynamically.</p>
+                    <p>I work across frontend and backend because modern systems are deeply interconnected. While I design fast React clients, my primary interest lies on the server side: designing stable REST APIs, structuring databases, handling secure authentication, and managing clean virtualization states.</p>
+                    <p>I don't claim to be a veteran software engineer. Instead, I honestly communicate my process: I build practical systems to understand how they work, study engineering patterns systematically, and strive to make each new build more structured than the last.</p>
+                </div>
             </div>
         </section>
 
         <section id="architecture" class="architecture section-space section-grid" aria-labelledby="architecture-title">
             <div class="shell">
-                <div class="section-heading reveal"><div><p class="eyebrow">02 / Architecture explorer</p><h2 id="architecture-title">A system is more than its interface.</h2></div><p>Hover or focus a layer to follow the relationships. This is the kind of path I enjoy tracing before turning an idea into code.</p></div>
-                <div class="architecture-explorer reveal reveal-delay-1" data-architecture>
-                    <div class="architecture-caption"><span>Request path</span><span>Interactive diagram</span></div>
-                    <div class="architecture-canvas">
-                        <button class="architecture-node node-browser" type="button" data-node="browser" aria-pressed="false"><i data-lucide="laptop" aria-hidden="true"></i><span>Browser</span><small>Intent enters here</small></button>
-                        <span class="connection c-browser-react" data-link="browser react" aria-hidden="true"></span>
-                        <button class="architecture-node node-react" type="button" data-node="react" aria-pressed="false"><i data-lucide="atom" aria-hidden="true"></i><span>React</span><small>Client workflow</small></button>
-                        <span class="connection c-react-api" data-link="react api" aria-hidden="true"></span>
-                        <button class="architecture-node node-api" type="button" data-node="api" aria-pressed="false"><i data-lucide="waypoints" aria-hidden="true"></i><span>REST API</span><small>Contract and validation</small></button>
-                        <span class="connection c-api-service" data-link="api service" aria-hidden="true"></span>
-                        <button class="architecture-node node-service" type="button" data-node="service" aria-pressed="false"><i data-lucide="server-cog" aria-hidden="true"></i><span>Django / Service</span><small>Rules and permissions</small></button>
-                        <span class="connection c-service-data" data-link="service data" aria-hidden="true"></span>
-                        <button class="architecture-node node-data" type="button" data-node="data" aria-pressed="false"><i data-lucide="database" aria-hidden="true"></i><span>PostgreSQL</span><small>Source of truth</small></button>
-                        <span class="connection c-service-cache" data-link="service cache" aria-hidden="true"></span>
-                        <button class="architecture-node node-cache" type="button" data-node="cache" aria-pressed="false"><i data-lucide="zap" aria-hidden="true"></i><span>Redis</span><small>Cache and queues</small></button>
-                        <span class="connection c-data-cloud" data-link="data cloud" aria-hidden="true"></span>
-                        <button class="architecture-node node-cloud" type="button" data-node="cloud" aria-pressed="false"><i data-lucide="cloud" aria-hidden="true"></i><span>Cloud</span><small>Delivery environment</small></button>
-                        <div class="data-packet packet-one" aria-hidden="true"></div><div class="data-packet packet-two" aria-hidden="true"></div>
+                <div class="section-heading reveal">
+                    <div>
+                        <p class="eyebrow">02 / System Topology</p>
+                        <h2 id="architecture-title">An architecture map of my study patterns.</h2>
                     </div>
-                    <div class="architecture-detail" aria-live="polite"><span class="detail-label">SELECT A LAYER</span><p>Each layer has a clear responsibility. Keeping those responsibilities visible makes systems easier to extend and reason about.</p></div>
+                    <p>Hover or click on any node to analyze dependencies and details. This maps out how data layers connect behind my systems.</p>
+                </div>
+
+                <div class="architecture-explorer reveal reveal-delay-1" data-architecture>
+                    <div class="architecture-caption">
+                        <span>Simplified request pipeline flow</span>
+                        <span>Interactive view</span>
+                    </div>
+                    <div class="architecture-canvas">
+                        <!-- Node 1: Browser -->
+                        <button class="architecture-node node-browser" type="button" data-node="browser" aria-pressed="false">
+                            <i data-lucide="laptop" aria-hidden="true"></i>
+                            <span>Browser client</span>
+                            <small>Starts action flows</small>
+                        </button>
+
+                        <div class="flow-line link-browser" data-link="browser"></div>
+
+                        <!-- Node 2: React -->
+                        <button class="architecture-node node-react" type="button" data-node="react" aria-pressed="false">
+                            <i data-lucide="atom" aria-hidden="true"></i>
+                            <span>React View layer</span>
+                            <small>State & layouts</small>
+                        </button>
+
+                        <div class="flow-line link-react" data-link="react"></div>
+
+                        <!-- Node 3: REST API -->
+                        <button class="architecture-node node-api" type="button" data-node="api" aria-pressed="false">
+                            <i data-lucide="waypoints" aria-hidden="true"></i>
+                            <span>REST API layer</span>
+                            <small>Guards & validations</small>
+                        </button>
+
+                        <div class="flow-line link-api" data-link="api"></div>
+
+                        <!-- Compute and Cache Side-by-Side Wrapper -->
+                        <div class="architecture-compute-group">
+                            <span class="compute-group-label">Service Layer</span>
+                            <!-- Node 4: Django -->
+                            <button class="architecture-node node-service" type="button" data-node="service" aria-pressed="false">
+                                <i data-lucide="server-cog" aria-hidden="true"></i>
+                                <span>Django App</span>
+                                <small>Core logic & rules</small>
+                            </button>
+
+                            <div class="flow-line-short link-service-cache" data-link="service cache"></div>
+
+                            <!-- Node 5: Redis -->
+                            <button class="architecture-node node-cache" type="button" data-node="cache" aria-pressed="false">
+                                <i data-lucide="zap" aria-hidden="true"></i>
+                                <span>Redis Cache</span>
+                                <small>Fast memory store</small>
+                            </button>
+                        </div>
+
+                        <div class="flow-line link-service" data-link="service"></div>
+
+                        <!-- Node 6: PostgreSQL Database -->
+                        <button class="architecture-node node-data" type="button" data-node="data" aria-pressed="false">
+                            <i data-lucide="database" aria-hidden="true"></i>
+                            <span>PostgreSQL DB</span>
+                            <small>Relational storage</small>
+                        </button>
+                    </div>
+                    <div class="architecture-detail" aria-live="polite">
+                        <span class="detail-label">SELECT A NODE</span>
+                        <p>Analyze how nodes interact in a modern service application structure.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="skills" class="skills section-space" aria-labelledby="skills-title">
-            <div class="shell"><div class="section-heading reveal"><div><p class="eyebrow">03 / Engineering map</p><h2 id="skills-title">Tools in context, not a wall of logos.</h2></div><p>Explore the stack to see how I think about each tool’s role in a larger system.</p></div>
-                <div class="skill-map reveal reveal-delay-1">
-                    <div class="skill-groups" role="group" aria-label="Technology categories">
-                        <div class="skill-group"><span>Backend</span><button type="button" class="skill-chip is-selected" data-skill="Django" data-description="A framework I am studying to build structured backend services with clear models, permissions, and REST APIs." data-related="REST APIs, PostgreSQL, Authentication">Django</button><button type="button" class="skill-chip" data-skill="Node.js + Express" data-description="Used for TypeScript API services and route-level business logic in current inventory work." data-related="TypeScript, Supabase, JWT">Node.js + Express</button><button type="button" class="skill-chip" data-skill="REST APIs" data-description="The contract between a client and a system: predictable resources, useful errors, validation, and authorization." data-related="Django, Express, JWT">REST APIs</button></div>
-                        <div class="skill-group"><span>Frontend</span><button type="button" class="skill-chip" data-skill="React" data-description="A practical client layer for product workflows, component boundaries, and interactive data views." data-related="TypeScript, REST APIs, Charts">React</button><button type="button" class="skill-chip" data-skill="TypeScript" data-description="Used to make data shapes, component contracts, and API integrations easier to reason about." data-related="React, Node.js + Express, REST APIs">TypeScript</button></div>
-                        <div class="skill-group"><span>Data</span><button type="button" class="skill-chip" data-skill="PostgreSQL" data-description="My primary database interest: relational modeling, query design, constraints, and durable data ownership." data-related="Django, Supabase, Redis">PostgreSQL</button><button type="button" class="skill-chip" data-skill="Supabase" data-description="A managed platform I use for authentication and data-backed application development." data-related="PostgreSQL, JWT, React">Supabase</button><button type="button" class="skill-chip" data-skill="Firebase" data-description="Used in earlier projects for authentication, realtime data synchronization, and storage." data-related="Realtime systems, Authentication, Messaging">Firebase</button></div>
-                        <div class="skill-group"><span>Infrastructure</span><button type="button" class="skill-chip" data-skill="Docker" data-description="A current learning focus for creating repeatable local environments and understanding service boundaries." data-related="Cloud, PostgreSQL, Backend services">Docker</button><button type="button" class="skill-chip" data-skill="Redis" data-description="A current learning focus for caching, queues, and the patterns that help systems respond efficiently." data-related="Django, Performance, Distributed systems">Redis</button><button type="button" class="skill-chip" data-skill="JWT" data-description="A token-based authentication pattern I use and study as part of secure API access." data-related="Supabase, REST APIs, Node.js + Express">JWT</button></div>
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <div>
+                        <p class="eyebrow">03 / Engineering Map</p>
+                        <h2 id="skills-title">Tools in system context.</h2>
                     </div>
-                    <aside class="skill-inspector" aria-live="polite"><p class="inspector-label">Technology context</p><h3>Django</h3><p>A framework I am studying to build structured backend services with clear models, permissions, and REST APIs.</p><div><span>Connects with</span><p class="related-skills">REST APIs, PostgreSQL, Authentication</p></div></aside>
+                    <p>Instead of simple status badges, click on any tool to evaluate why I study it and how it interacts within my systems.</p>
+                </div>
+
+                <div class="skill-map reveal reveal-delay-1">
+                    <div class="skill-groups" role="group" aria-label="Technology Stack Group">
+                        <div class="skill-group">
+                            <span>Backend</span>
+                            <button type="button" class="skill-chip is-selected" data-skill="Django" data-description="A robust framework I study to build highly structured services with predictable rules, authentication, and secure databases." data-related="REST APIs, PostgreSQL, Docker">Django</button>
+                            <button type="button" class="skill-chip" data-skill="Node.js + Express" data-description="I use this with TypeScript to write API route logic, validate parameters, and interface cleanly with BaaS systems like Supabase." data-related="TypeScript, Supabase, REST APIs">Node.js + Express</button>
+                            <button type="button" class="skill-chip" data-skill="REST APIs" data-description="The key communication boundaries of applications. I prioritize clean HTTP parameters, correct response codes, and descriptive JSON payloads." data-related="Django, Express, JWT Security">REST APIs</button>
+                        </div>
+                        <div class="skill-group">
+                            <span>Frontend</span>
+                            <button type="button" class="skill-chip" data-skill="React" data-description="Provides responsive UI layouts, keeps state clean at the layout edge, and fetches data from backends without blocking the viewport." data-related="TypeScript, REST APIs">React</button>
+                            <button type="button" class="skill-chip" data-skill="TypeScript" data-description="I study TypeScript to maintain type boundaries across my frontend components and Node-based endpoints." data-related="React, Node.js + Express">TypeScript</button>
+                        </div>
+                        <div class="skill-group">
+                            <span>Database</span>
+                            <button type="button" class="skill-chip" data-skill="PostgreSQL" data-description="My primary database interest. I focus on modeling tables cleanly, using keys, checking queries, and understanding relational rules." data-related="Django, Redis, Supabase">PostgreSQL</button>
+                            <button type="button" class="skill-chip" data-skill="Supabase" data-description="Provides useful backend services for databases, handling authorization and user accounts efficiently." data-related="PostgreSQL, JWT Security, React">Supabase</button>
+                            <button type="button" class="skill-chip" data-skill="Firebase" data-description="Used in my projects to handle real-time synchronization pipelines and simple database structures." data-related="Real-time systems, Realtime DB Sync">Firebase</button>
+                        </div>
+                        <div class="skill-group">
+                            <span>Infrastructure</span>
+                            <button type="button" class="skill-chip" data-skill="Docker" data-description="I am studying containerization to package application, database, and caching environments reliably." data-related="Django, PostgreSQL, Redis">Docker</button>
+                            <button type="button" class="skill-chip" data-skill="Redis" data-description="A caching layer. I study how in-memory structures store session keys and reduce heavy relational queries." data-related="Django, PostgreSQL, Performance Patterns">Redis</button>
+                            <button type="button" class="skill-chip" data-skill="JWT Security" data-description="JSON Web Token authentication strategies. I study signature validation, token security rules, and claims." data-related="REST APIs, Node.js + Express">JWT Security</button>
+                        </div>
+                    </div>
+
+                    <aside class="skill-inspector" aria-live="polite">
+                        <p class="inspector-label">System Context</p>
+                        <h3>Django</h3>
+                        <p>A robust framework I study to build highly structured services with predictable rules, authentication, and secure databases.</p>
+                        <div>
+                            <span>Interacts With</span>
+                            <p class="related-skills">REST APIs, PostgreSQL, Docker</p>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </section>
 
         <section id="work" class="work section-space section-grid" aria-labelledby="work-title">
-            <div class="shell"><div class="section-heading reveal"><div><p class="eyebrow">04 / Selected work</p><h2 id="work-title">Systems, experiments, and the questions behind them.</h2></div><p>These are not claims of production scale. They are projects where I practiced making real technical decisions and learned from the result.</p></div>
-                <div class="case-study-list">
-                    <article class="case-study reveal"><div class="case-meta"><span>01</span><span>Inventory workflow</span></div><div class="case-main"><h3>Stockora Inventory System</h3><p>An evolving inventory workspace for managing products, brands, and dashboard information through defined frontend, API, and data boundaries.</p><div class="case-grid"><div><strong>Problem</strong><span>Keep operational data consistent as product workflows grow beyond a single screen.</span></div><div><strong>Approach</strong><span>Separate client features, authenticated API routes, and data access so each layer has a clear job.</span></div><div><strong>Decisions</strong><span>TypeScript feature modules, route separation, Supabase-backed auth, and Docker-based local workflows.</span></div></div><div class="tech-row"><span>React</span><span>TypeScript</span><span>Express</span><span>Supabase</span><span>PostgreSQL</span><span>Docker</span></div><details class="engineering-notes"><summary>Read engineering notes <i data-lucide="plus" aria-hidden="true"></i></summary><p>The work is actively evolving. My focus is learning how choices such as API boundaries, idempotent operations, authentication checks, and data shape affect the usability and maintainability of an inventory product.</p></details></div><aside class="case-visual inventory-visual" aria-label="Stockora architecture summary"><span class="visual-label">SYSTEM BOUNDARIES</span><div class="mini-flow"><span>React</span><i data-lucide="arrow-down" aria-hidden="true"></i><span>API</span><i data-lucide="arrow-down" aria-hidden="true"></i><span>Data</span></div></aside></article>
-                    <article class="case-study reveal"><div class="case-meta"><span>02</span><span>Point of sale</span></div><div class="case-main"><h3>PRISM POS &amp; Inventory Manager</h3><p>A point-of-sale and inventory project exploring how sales activity, products, user access, and reporting fit into one operational workflow.</p><div class="case-grid"><div><strong>Problem</strong><span>Connect sales and stock updates without treating them as isolated records.</span></div><div><strong>Approach</strong><span>Use Firebase services for identity and synchronized data while keeping the project centered on workflow logic.</span></div><div><strong>Decisions</strong><span>Managed authentication and realtime data reduced setup overhead and surfaced business-rule decisions earlier.</span></div></div><div class="tech-row"><span>Java</span><span>Firebase Auth</span><span>Realtime Data</span><span>JavaScript</span></div><details class="engineering-notes"><summary>Read engineering notes <i data-lucide="plus" aria-hidden="true"></i></summary><p>This project reinforced the relationship between user actions, inventory state, and reporting. It helped me see how backend capabilities shape a user-facing workflow.</p></details><a class="text-link" href="https://github.com/Jviscoding/PRISM---Point-of-Sales-Reporting-and-Inventory-System-Manager" target="_blank" rel="noreferrer noopener">View repository <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div><aside class="case-visual prism-visual" aria-label="PRISM architecture summary"><span class="visual-label">OPERATIONAL FLOW</span><div class="mini-flow"><span>Sales</span><i data-lucide="arrow-right" aria-hidden="true"></i><span>Firebase</span><i data-lucide="arrow-right" aria-hidden="true"></i><span>Stock</span></div></aside></article>
-                    <article class="case-study reveal"><div class="case-meta"><span>03</span><span>Realtime communication</span></div><div class="case-main"><h3>Messaging Application</h3><p>A realtime communication project built around the practical need for authenticated users, shared messages, and media-aware conversations.</p><div class="case-grid"><div><strong>Problem</strong><span>Support synchronous conversation without first building an entire backend platform from scratch.</span></div><div><strong>Approach</strong><span>Use Firebase authentication, realtime synchronization, and storage as the platform foundation.</span></div><div><strong>Decisions</strong><span>Prioritize user flow and live state behavior while learning the constraints of a managed realtime stack.</span></div></div><div class="tech-row"><span>Firebase</span><span>Authentication</span><span>Realtime Data</span><span>Storage</span></div><details class="engineering-notes"><summary>Read engineering notes <i data-lucide="plus" aria-hidden="true"></i></summary><p>Working with realtime state made consistency, identity, and event flow more concrete. It is a useful reference point for my growing interest in distributed systems.</p></details><a class="text-link" href="https://github.com/Jviscoding/MessagingAppReal" target="_blank" rel="noreferrer noopener">View repository <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div><aside class="case-visual message-visual" aria-label="Messaging app architecture summary"><span class="visual-label">EVENT FLOW</span><div class="mini-flow"><span>Sender</span><i data-lucide="radio" aria-hidden="true"></i><span>Sync</span><i data-lucide="radio" aria-hidden="true"></i><span>Receiver</span></div></aside></article>
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <div>
+                        <p class="eyebrow">04 / Selected Work</p>
+                        <h2 id="work-title">Practical applications and the logic behind them.</h2>
+                    </div>
+                    <p>These are focus projects where I practice structuring datasets, validating logic boundaries, and testing APIs.</p>
                 </div>
-                <div class="project-shelf reveal" aria-label="Additional projects"><p class="shelf-label">More systems thinking</p><a href="https://github.com/Jviscoding/digital-signal-processing-compiled-react-based" target="_blank" rel="noreferrer noopener"><span>Digital Signal Processing Tool</span><small>React, TypeScript, Canvas</small><i data-lucide="arrow-up-right" aria-hidden="true"></i></a><a href="https://github.com/Jviscoding/OS_mini_application_tool" target="_blank" rel="noreferrer noopener"><span>Process Scheduling Simulator</span><small>Algorithms, JavaScript, Canvas</small><i data-lucide="arrow-up-right" aria-hidden="true"></i></a><a href="https://github.com/Jviscoding/IoT_Automatic_Plant_Watering" target="_blank" rel="noreferrer noopener"><span>Smart Plant Monitoring System</span><small>IoT, sensor data, web dashboard</small><i data-lucide="arrow-up-right" aria-hidden="true"></i></a><a href="https://github.com/Jviscoding/Numerical-Method" target="_blank" rel="noreferrer noopener"><span>Numerical Method Tool</span><small>React, TypeScript, Canvas</small><i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
+
+                <div class="case-study-list">
+                    <article class="case-study reveal">
+                        <div class="case-meta">
+                            <span>01</span>
+                            <span>Inventory Flow</span>
+                        </div>
+                        <div class="case-main">
+                            <h3>Stockora Inventory System</h3>
+                            <p>An evolving application workspace for tracking brands, products, and operational telemetry through a clean, multi-layered environment design.</p>
+                            <div class="case-grid">
+                                <div>
+                                    <strong>Problem</strong>
+                                    <span>Ensuring data remains accurate as operational products update across multiple dashboards.</span>
+                                </div>
+                                <div>
+                                    <strong>Approach</strong>
+                                    <span>Separated client states, authenticated endpoints, and database models to isolate logic steps cleanly.</span>
+                                </div>
+                                <div>
+                                    <strong>Technical Decisions</strong>
+                                    <span>TypeScript layouts, Express logic files, Supabase authentication processes, and local Docker containers.</span>
+                                </div>
+                            </div>
+                            <div class="tech-row">
+                                <span>React</span>
+                                <span>TypeScript</span>
+                                <span>Express</span>
+                                <span>Supabase</span>
+                                <span>PostgreSQL</span>
+                                <span>Docker</span>
+                            </div>
+                            <details class="engineering-notes">
+                                <summary>Read Technical Notes <i data-lucide="plus" aria-hidden="true"></i></summary>
+                                <p>This system serves as a testing ground for maintaining relational data integrity, testing endpoint security, and configuring clean Docker setups.</p>
+                            </details>
+                        </div>
+                        <aside class="case-visual inventory-visual" aria-label="Stockora Architecture Graph">
+                            <span class="visual-label">Layers</span>
+                            <div class="mini-flow">
+                                <span>React View</span>
+                                <i data-lucide="arrow-down" aria-hidden="true"></i>
+                                <span>Express API</span>
+                                <i data-lucide="arrow-down" aria-hidden="true"></i>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </aside>
+                    </article>
+
+                    <article class="case-study reveal">
+                        <div class="case-meta">
+                            <span>02</span>
+                            <span>Sales &amp; Tracking</span>
+                        </div>
+                        <div class="case-main">
+                            <h3>PRISM POS &amp; Inventory Manager</h3>
+                            <p>An application layout connecting transaction parameters, active stocks, database updates, and reports in a unified manager workflow.</p>
+                            <div class="case-grid">
+                                <div>
+                                    <strong>Problem</strong>
+                                    <span>Synchronizing transaction history with active warehouse stock parameters dynamically.</span>
+                                </div>
+                                <div>
+                                    <strong>Approach</strong>
+                                    <span>Utilized native real-time sync systems to link active checkout values with back-end storage values.</span>
+                                </div>
+                                <div>
+                                    <strong>Technical Decisions</strong>
+                                    <span>Java interface elements combined with Firebase sync pipelines and local script layers.</span>
+                                </div>
+                            </div>
+                            <div class="tech-row">
+                                <span>Java</span>
+                                <span>Firebase Auth</span>
+                                <span>Realtime Data</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <details class="engineering-notes">
+                                <summary>Read Technical Notes <i data-lucide="plus" aria-hidden="true"></i></summary>
+                                <p>Building this POS helped me understand how client interactions affect back-end datasets, emphasizing why proper state updates are essential.</p>
+                            </details>
+                            <a class="text-link" href="https://github.com/Jviscoding/PRISM---Point-of-Sales-Reporting-and-Inventory-System-Manager" target="_blank" rel="noreferrer noopener">View Repository <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+                        </div>
+                        <aside class="case-visual prism-visual" aria-label="PRISM Workflow Graph">
+                            <span class="visual-label">Real-time Pipeline</span>
+                            <div class="mini-flow">
+                                <span>Java Client</span>
+                                <i data-lucide="arrow-right" aria-hidden="true"></i>
+                                <span>Firebase Synced</span>
+                                <i data-lucide="arrow-right" aria-hidden="true"></i>
+                                <span>Active Stock</span>
+                            </div>
+                        </aside>
+                    </article>
+
+                    <article class="case-study reveal">
+                        <div class="case-meta">
+                            <span>03</span>
+                            <span>Real-time Chat</span>
+                        </div>
+                        <div class="case-main">
+                            <h3>Real-time Messaging System</h3>
+                            <p>An application interface to manage client synchronization patterns, chat rooms, and secure message transfers.</p>
+                            <div class="case-grid">
+                                <div>
+                                    <strong>Problem</strong>
+                                    <span>Distributing real-time updates safely across clients without complex host setups.</span>
+                                </div>
+                                <div>
+                                    <strong>Approach</strong>
+                                    <span>Managed synchronization parameters on Firebase backends while isolating clients' validation states.</span>
+                                </div>
+                                <div>
+                                    <strong>Technical Decisions</strong>
+                                    <span>Modular structures, client validations, and active synchronization channels.</span>
+                                </div>
+                            </div>
+                            <div class="tech-row">
+                                <span>Firebase</span>
+                                <span>Authentication</span>
+                                <span>Realtime Data</span>
+                                <span>Storage</span>
+                            </div>
+                            <details class="engineering-notes">
+                                <summary>Read Technical Notes <i data-lucide="plus" aria-hidden="true"></i></summary>
+                                <p>This system provided clear insight into how data synchronization behaves across diverse viewports, sparking my interest in backend systems.</p>
+                            </details>
+                            <a class="text-link" href="https://github.com/Jviscoding/MessagingAppReal" target="_blank" rel="noreferrer noopener">View Repository <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+                        </div>
+                        <aside class="case-visual message-visual" aria-label="Realtime Chat Graph">
+                            <span class="visual-label">Communication Stream</span>
+                            <div class="mini-flow">
+                                <span>Client Active</span>
+                                <i data-lucide="radio" aria-hidden="true"></i>
+                                <span>Realtime Sync</span>
+                                <i data-lucide="radio" aria-hidden="true"></i>
+                                <span>Target Client</span>
+                            </div>
+                        </aside>
+                    </article>
+                </div>
+
+                <div class="project-shelf reveal">
+                    <p class="shelf-label">More Systems &amp; Technical Experiments</p>
+                    <a href="https://github.com/Jviscoding/digital-signal-processing-compiled-react-based" target="_blank" rel="noreferrer noopener">
+                        <span>Digital Signal Processing Tool</span>
+                        <small>React, TypeScript, Interactive Canvas Module</small>
+                        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/Jviscoding/OS_mini_application_tool" target="_blank" rel="noreferrer noopener">
+                        <span>Process Scheduling Simulator</span>
+                        <small>CPU Scheduling Algorithms, JavaScript Canvas</small>
+                        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/Jviscoding/IoT_Automatic_Plant_Watering" target="_blank" rel="noreferrer noopener">
+                        <span>Smart Plant Monitoring System</span>
+                        <small>IoT Sensor Data, Web Telemetry Dashboard</small>
+                        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/Jviscoding/Numerical-Method" target="_blank" rel="noreferrer noopener">
+                        <span>Numerical Method Tool</span>
+                        <small>Computational Math Modules, React Canvas Rendering</small>
+                        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
         <section id="learning" class="learning section-space" aria-labelledby="learning-title">
-            <div class="shell"><div class="section-heading reveal"><div><p class="eyebrow">05 / Learning in public</p><h2 id="learning-title">A roadmap, not a finish line.</h2></div><p>My learning path moves from making features work to understanding the systems that keep them working.</p></div>
-                <ol class="journey-path reveal" aria-label="Learning journey"><li><span>01</span><div><strong>Programming foundations</strong><small>Building confidence through applied projects</small></div></li><li><span>02</span><div><strong>Frontend systems</strong><small>Interfaces, state, and user workflows</small></div></li><li><span>03</span><div><strong>Backend development</strong><small>APIs, validation, authentication</small></div></li><li><span>04</span><div><strong>Data systems</strong><small>Relational design and PostgreSQL</small></div></li><li><span>05</span><div><strong>Infrastructure</strong><small>Docker, cloud, deployment habits</small></div></li><li><span>06</span><div><strong>Architecture</strong><small>Scalability, trade-offs, distributed systems</small></div></li></ol>
-                <div class="roadmap-grid reveal reveal-delay-1"><article><span class="roadmap-status">Exploring now</span><h3>Docker &amp; service environments</h3><p>Understanding how applications, databases, and services can be reproduced locally and moved with confidence.</p></article><article><span class="roadmap-status">Exploring now</span><h3>Redis &amp; performance patterns</h3><p>Learning when caches, queues, and background work help a system stay responsive.</p></article><article><span class="roadmap-status">Deepening</span><h3>System design</h3><p>Practicing how to describe requirements, boundaries, failure modes, and trade-offs before implementation.</p></article><article><span class="roadmap-status">Ongoing</span><h3>Cloud &amp; distributed systems</h3><p>Building a more practical understanding of delivery, observability, and systems that communicate across boundaries.</p></article></div>
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <div>
+                        <p class="eyebrow">05 / Growth Journey</p>
+                        <h2 id="learning-title">Continuous learning, structured systematically.</h2>
+                    </div>
+                    <p>I focus on understanding how software layers interact, mapping out my studies from layouts to back-end architecture parameters.</p>
+                </div>
+
+                <ol class="journey-path reveal" aria-label="Learning Journey timeline">
+                    <li>
+                        <span>01</span>
+                        <div>
+                            <strong>Core Foundations</strong>
+                            <small>Logic models & basic data tracking</small>
+                        </div>
+                    </li>
+                    <li>
+                        <span>02</span>
+                        <div>
+                            <strong>Client Layouts</strong>
+                            <small>Interactive components and states</small>
+                        </div>
+                    </li>
+                    <li>
+                        <span>03</span>
+                        <div>
+                            <strong>Service APIs</strong>
+                            <small>REST API parameters, validation</small>
+                        </div>
+                    </li>
+                    <li>
+                        <span>04</span>
+                        <div>
+                            <strong>Data Tables</strong>
+                            <small>Relational systems & database models</small>
+                        </div>
+                    </li>
+                    <li>
+                        <span>05</span>
+                        <div>
+                            <strong>Environments</strong>
+                            <small>Virtualization structures via Docker</small>
+                        </div>
+                    </li>
+                    <li>
+                        <span>06</span>
+                        <div>
+                            <strong>Architecture</strong>
+                            <small>Optimizations & scaling patterns</small>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="roadmap-grid reveal reveal-delay-1">
+                    <article>
+                        <span class="roadmap-status">Exploring Now</span>
+                        <h3>Docker &amp; Isolated Setups</h3>
+                        <p>Studying container boundaries to make environments, databases, and dependencies repeatable on any machine.</p>
+                    </article>
+                    <article>
+                        <span class="roadmap-status">Exploring Now</span>
+                        <h3>Redis &amp; Caching Strategies</h3>
+                        <p>Exploring how cache rules, temporary data buckets, and in-memory key-value maps optimize performance.</p>
+                    </article>
+                    <article>
+                        <span class="roadmap-status">Ongoing</span>
+                        <h3>Clean Database Modeling</h3>
+                        <p>Mastering table relationships, indexing primary parameters, and checking queries in relational PostgreSQL structures.</p>
+                    </article>
+                    <article>
+                        <span class="roadmap-status">Future Goals</span>
+                        <h3>Distributed Systems</h3>
+                        <p>Studying network structures, replication patterns, and how distinct programs exchange state reliably.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
         <section id="contact" class="contact section-space section-grid" aria-labelledby="contact-title">
-            <div class="shell contact-panel reveal"><div class="contact-copy"><p class="eyebrow">06 / Collaboration</p><h2 id="contact-title">Let’s build something worth understanding.</h2><p>Have a product workflow, backend challenge, or system idea to discuss? I would be glad to connect and learn from the conversation.</p></div><div class="contact-actions"><button class="button button-primary copy-email" type="button" data-email="johnvincentmanalastasliguit@gmail.com"><i data-lucide="copy" aria-hidden="true"></i> Copy email</button><a class="button button-quiet" href="https://github.com/Jviscoding" target="_blank" rel="noreferrer noopener"><i data-lucide="github" aria-hidden="true"></i> GitHub</a><a class="button button-quiet" href="mailto:johnvincentmanalastasliguit@gmail.com?subject=Resume%20request"><i data-lucide="file-text" aria-hidden="true"></i> Request resume</a></div></div>
+            <div class="shell contact-panel reveal">
+                <div class="contact-copy">
+                    <p class="eyebrow">06 / Let's Connect</p>
+                    <h2 id="contact-title">Let's collaborate on reliable systems.</h2>
+                    <p>Need a robust REST backend, structured database schemas, or efficient React dashboards? I would be glad to discuss architecture ideas and build systems together.</p>
+                </div>
+                <div class="contact-actions">
+                    <button class="button button-primary copy-email" type="button" data-email="johnvincentmanalastasliguit@gmail.com">
+                        <i data-lucide="copy" aria-hidden="true"></i> Copy Email
+                    </button>
+                    <a class="button button-quiet" href="https://github.com/Jviscoding" target="_blank" rel="noreferrer noopener">
+                        <i data-lucide="github" aria-hidden="true"></i> GitHub
+                    </a>
+                    <a class="button button-quiet" href="mailto:johnvincentmanalastasliguit@gmail.com?subject=Portfolio%20Inquiry">
+                        <i data-lucide="mail" aria-hidden="true"></i> Email Me
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer class="site-footer"><div class="shell"><span>© 2026 John Vincent Liguit</span><span>Designed as a workspace, not a brochure.</span></div></footer>
+    <footer class="site-footer">
+        <div class="shell">
+            <span>&copy; 2026 John Vincent Liguit</span>
+            <span>Evolving modern backend architectures.</span>
+        </div>
+    </footer>
 
-    <dialog id="command-palette" class="command-palette" aria-labelledby="palette-title"><div class="palette-shell"><div class="palette-search"><i data-lucide="search" aria-hidden="true"></i><input id="command-input" type="text" placeholder="Type a command or search..." autocomplete="off"><kbd>Esc</kbd></div><div class="palette-title"><span id="palette-title">Navigation</span><span>↑ ↓ to move · Enter to select</span></div><div id="command-list" class="command-list" role="listbox" aria-label="Available commands"><button type="button" role="option" data-command="section" data-target="#work"><i data-lucide="folder-kanban" aria-hidden="true"></i><span>Open selected work<small>Go to project case studies</small></span><kbd>↵</kbd></button><button type="button" role="option" data-command="section" data-target="#architecture"><i data-lucide="network" aria-hidden="true"></i><span>View architecture<small>Open the interactive system map</small></span><kbd>↵</kbd></button><button type="button" role="option" data-command="section" data-target="#skills"><i data-lucide="layers-3" aria-hidden="true"></i><span>Open skills map<small>Explore technology context</small></span><kbd>↵</kbd></button><button type="button" role="option" data-command="section" data-target="#learning"><i data-lucide="route" aria-hidden="true"></i><span>View learning roadmap<small>See current engineering focus</small></span><kbd>↵</kbd></button><button type="button" role="option" data-command="section" data-target="#contact"><i data-lucide="mail" aria-hidden="true"></i><span>Go to collaboration panel<small>Copy email or visit GitHub</small></span><kbd>↵</kbd></button><button type="button" role="option" data-command="theme"><i data-lucide="sun-moon" aria-hidden="true"></i><span>Toggle theme<small>Switch dark and light preference</small></span><kbd>↵</kbd></button><a role="option" data-command="github" href="https://github.com/Jviscoding" target="_blank" rel="noreferrer noopener"><i data-lucide="github" aria-hidden="true"></i><span>Open GitHub<small>View source and projects</small></span><kbd>↗</kbd></a></div></div></dialog>
+    <!-- CLI Keyboard Dialog Module -->
+    <dialog id="command-palette" class="command-palette" aria-labelledby="palette-title">
+        <div class="palette-shell">
+            <div class="palette-search">
+                <i data-lucide="search" aria-hidden="true"></i>
+                <input id="command-input" type="text" placeholder="Search commands..." autocomplete="off">
+                <kbd>Esc</kbd>
+            </div>
+            <div class="palette-title">
+                <span id="palette-title">SYSTEM PREFERENCES</span>
+                <span>↑ ↓ to move &middot; Enter to execute</span>
+            </div>
+            <div id="command-list" class="command-list" role="listbox" aria-label="Available commands">
+                <button type="button" role="option" data-command="section" data-target="#work">
+                    <i data-lucide="folder-git-2" aria-hidden="true"></i>
+                    <span>Open Selected Work<small>Examine case studies &amp; repositories</small></span>
+                    <kbd>Enter</kbd>
+                </button>
+                <button type="button" role="option" data-command="section" data-target="#architecture">
+                    <i data-lucide="network" aria-hidden="true"></i>
+                    <span>View Architecture Explorer<small>Inspect adjacent system connection maps</small></span>
+                    <kbd>Enter</kbd>
+                </button>
+                <button type="button" role="option" data-command="section" data-target="#skills">
+                    <i data-lucide="cpu" aria-hidden="true"></i>
+                    <span>Open Skills Matrix<small>Evaluate technical tools in system contexts</small></span>
+                    <kbd>Enter</kbd>
+                </button>
+                <button type="button" role="option" data-command="section" data-target="#learning">
+                    <i data-lucide="graduation-cap" aria-hidden="true"></i>
+                    <span>Inspect Roadmap<small>Analyze ongoing studies &amp; goals</small></span>
+                    <kbd>Enter</kbd>
+                </button>
+                <button type="button" role="option" data-command="section" data-target="#contact">
+                    <i data-lucide="send" aria-hidden="true"></i>
+                    <span>Connect Panel<small>Inquire about systems development projects</small></span>
+                    <kbd>Enter</kbd>
+                </button>
+                <button type="button" role="option" data-command="theme">
+                    <i data-lucide="sun-moon" aria-hidden="true"></i>
+                    <span>Toggle Visual Theme<small>Switch between Light and Dark display modes</small></span>
+                    <kbd>Enter</kbd>
+                </button>
+                <a role="option" data-command="github" href="https://github.com/Jviscoding" target="_blank" rel="noreferrer noopener">
+                    <i data-lucide="github" aria-hidden="true"></i>
+                    <span>Explore GitHub Repositories<small>Examine open-source architecture builds</small></span>
+                    <kbd>Open ↗</kbd>
+                </a>
+            </div>
+        </div>
+    </dialog>
+
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script src="script.js"></script>
+
+    <script src="./script.js"/>
 </body>
 </html>
