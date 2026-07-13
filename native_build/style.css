@@ -303,20 +303,21 @@ button {
     background-color: var(--bg-dark-900);
     border: 1px solid rgba(255, 255, 255, 0.05);
     color: var(--text-main);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     transition: var(--transition-smooth);
-    background-color: white;
 }
-.dir-container{
-    display: flex ;
+.dir-container {
+    display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .btn-icon:hover {
     color: var(--text-white);
     border-color: rgba(77, 163, 255, 0.3);
+    transform: translateY(-1px);
 }
 
 .tag-container {
@@ -1481,4 +1482,281 @@ button {
     transform: translate(-50%, -50%);
 
     z-index: 9999;
+}
+
+/* ========================================================================== 
+   ACCESSIBILITY & SYSTEM STORYTELLING
+   ========================================================================== */
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 100;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: var(--brand);
+    color: var(--bg-dark-950);
+    font-weight: 700;
+    transform: translateY(-160%);
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 4px;
+}
+
+.btn:focus-visible,
+.btn-icon:focus-visible,
+.card-link:focus-visible,
+.nav-item:focus-visible,
+.mobile-nav-item:focus-visible {
+    outline-offset: 3px;
+}
+
+.projects-intro {
+    max-width: 660px;
+    margin-top: 18px;
+    color: var(--text-main);
+    line-height: 1.7;
+}
+
+.terminal-status p {
+    white-space: normal;
+}
+
+.decision-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 0 0 28px;
+}
+
+.decision-grid div {
+    padding: 12px;
+    border-left: 2px solid rgba(77, 163, 255, 0.38);
+    background: rgba(9, 10, 15, 0.52);
+}
+
+.decision-grid dt {
+    margin-bottom: 5px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    color: var(--brand);
+    text-transform: uppercase;
+}
+
+.decision-grid dd {
+    color: var(--text-light);
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.project-status {
+    cursor: default;
+}
+
+.architecture-panel {
+    padding: 28px;
+    background:
+        linear-gradient(rgba(77, 163, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(77, 163, 255, 0.035) 1px, transparent 1px),
+        var(--bg-dark-950);
+    background-size: 22px 22px;
+}
+
+.architecture-map {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 22px;
+    border: 1px solid rgba(77, 163, 255, 0.18);
+    border-radius: 12px;
+    background: rgba(9, 10, 15, 0.9);
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.7);
+}
+
+.architecture-map figcaption {
+    margin-bottom: 22px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+}
+
+.architecture-flow {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.architecture-node {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    column-gap: 10px;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    background: var(--bg-dark-900);
+    color: var(--text-white);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.architecture-node i {
+    width: 17px;
+    color: var(--brand);
+}
+
+.architecture-node small {
+    grid-column: 2;
+    margin-top: 3px;
+    color: var(--text-main);
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.architecture-node.active-node {
+    border-color: rgba(77, 163, 255, 0.5);
+    box-shadow: inset 0 0 20px rgba(77, 163, 255, 0.06);
+}
+
+.architecture-connector {
+    width: 1px;
+    height: 17px;
+    margin: 0 auto;
+    background: linear-gradient(var(--brand), rgba(77, 163, 255, 0.2));
+}
+
+.architecture-note {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-main);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.philosophy-section {
+    padding: 96px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(5, 5, 7, 0.5);
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+}
+
+.philosophy-intro .tag-container {
+    margin-bottom: 16px;
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.principle-card {
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    background: rgba(17, 19, 28, 0.45);
+    transition: var(--transition-smooth);
+}
+
+.principle-card:hover {
+    border-color: rgba(77, 163, 255, 0.28);
+    transform: translateY(-2px);
+}
+
+.principle-card > i {
+    width: 20px;
+    margin-bottom: 18px;
+    color: var(--brand);
+}
+
+.principle-card h3 {
+    margin-bottom: 8px;
+    color: var(--text-white);
+    font-size: 15px;
+}
+
+.principle-card p {
+    color: var(--text-main);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (min-width: 600px) {
+    .decision-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .principles-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 960px) {
+    .nav-links {
+        gap: 18px;
+        font-size: 12px;
+    }
+
+    .nav-actions .btn-sm {
+        padding: 8px 12px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .philosophy-grid {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .philosophy-intro {
+        grid-column: span 5;
+    }
+
+    .principles-grid {
+        grid-column: span 7;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal,
+    .reveal-scale,
+    .reveal-left {
+        opacity: 1;
+        filter: none;
+        transform: none;
+    }
+
+    .mouse-tracker {
+        display: none;
+    }
 }

@@ -1,49 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // 1. Initialize Vector/Lucide Icons Icons
+    // Initialize Lucide icons.
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
 
-    // 2. Mobile Responsive Menu Controller
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const mouseTracker = document.querySelector(".mouse-tracker")
+    const mouseTracker = document.querySelector('.mouse-tracker');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('section[id]');
+    const animatedElements = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left');
 
     let isMenuOpen = false;
 
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
             isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                mobileMenu.classList.add('open');
-                menuBtn.innerHTML = `<i data-lucide="x"></i>`;
-            } else {
-                mobileMenu.classList.remove('open');
-                menuBtn.innerHTML = `<i data-lucide="menu"></i>`;
+            mobileMenu.classList.toggle('open', isMenuOpen);
+            menuBtn.setAttribute('aria-expanded', String(isMenuOpen));
+            menuBtn.setAttribute('aria-label', isMenuOpen ? 'Close navigation menu' : 'Open navigation menu');
+            menuBtn.innerHTML = isMenuOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
             }
-            if (typeof lucide !== 'undefined') lucide.createIcons();
         });
 
-        // Auto collapse mobile drawer items when an item links down
-        const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
-        mobileNavItems.forEach(item => {
+        document.querySelectorAll('.mobile-nav-item').forEach(item => {
             item.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
                 isMenuOpen = false;
-                menuBtn.innerHTML = `<i data-lucide="menu"></i>`;
-                if (typeof lucide !== 'undefined') lucide.createIcons();
+                mobileMenu.classList.remove('open');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                menuBtn.setAttribute('aria-label', 'Open navigation menu');
+                menuBtn.innerHTML = '<i data-lucide="menu"></i>';
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
             });
         });
     }
 
-    // 3. Native High Performance Scrollspy Layout Engine
-    const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-item');
-
     function parseScrollspy() {
         let activeSectionId = '';
-        const scrollOffsetPosition = window.scrollY + 100; // Offset depth calculation for sticky header boundary
+        const scrollOffsetPosition = window.scrollY + 100;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -55,61 +53,60 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         navItems.forEach(item => {
-            item.classList.remove('nav-active');
-            if (item.getAttribute('href') === `#${activeSectionId}`) {
-                item.classList.add('nav-active');
+            const isActive = item.getAttribute('href') === `#${activeSectionId}`;
+            item.classList.toggle('nav-active', isActive);
+            if (isActive) {
+                item.setAttribute('aria-current', 'page');
+            } else {
+                item.removeAttribute('aria-current');
             }
         });
     }
 
-    window.addEventListener('scroll', parseScrollspy);
+    window.addEventListener('scroll', parseScrollspy, { passive: true });
     window.addEventListener('load', parseScrollspy);
 
-    // 4. Modern Intersection Observer Scroll Reveal System (Buttery Fluid Inputs)
     const revealConfiguration = {
-        threshold: 0.1, // Element activates once 10% enters standard screen box
-        rootMargin: '0px 0px -40px 0px' // Compensates edge buffer zones smoothly
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
     };
 
     const sectionRevealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('revealed');
-                observer.unobserve(entry.target); // Ensures animation processes exactly once
+                observer.unobserve(entry.target);
             }
         });
     }, revealConfiguration);
 
-    // Target elements across page nodes
-    const animatedElements = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left');
     animatedElements.forEach(element => {
         sectionRevealObserver.observe(element);
     });
 
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    if (mouseTracker && !reduceMotion) {
+        let targetX = window.innerWidth / 2;
+        let targetY = window.innerHeight / 2;
+        let currentX = targetX;
+        let currentY = targetY;
 
-    let targetX = window.innerWidth / 2;
-    let targetY = window.innerHeight / 2;
+        document.addEventListener('pointermove', (e) => {
+            targetX = e.clientX;
+            targetY = e.clientY;
+        }, { passive: true });
 
-    let currentX = targetX;
-    let currentY = targetY;
+        function animate() {
+            currentX += (targetX - currentX) * 0.12;
+            currentY += (targetY - currentY) * 0.12;
 
-    document.addEventListener('mousemove', (e) => {
-        targetX = e.clientX;
-        targetY = e.clientY;
-    });
+            mouseTracker.style.left = `${currentX}px`;
+            mouseTracker.style.top = `${currentY}px`;
 
-    function animate() {
+            requestAnimationFrame(animate);
+        }
 
-        // Lerp
-        currentX += (targetX - currentX) * 1;
-        currentY += (targetY - currentY) * 1;
-
-        mouseTracker.style.left = `${currentX}px`;
-        mouseTracker.style.top = `${currentY}px`;
-
-        requestAnimationFrame(animate);
+        animate();
     }
-
-    animate();
 });

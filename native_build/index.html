@@ -1,751 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jviscoding | Full Stack Developer Portfolio</title>
-
+    <meta name="description" content="Portfolio of John Vincent Liguit, a backend-focused full-stack developer building reliable data-driven systems.">
+    <title>Jviscoding | Backend-Focused Full-Stack Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
 <body>
-
-
-    <div class="mouse-tracker">
-
-    </div>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="mouse-tracker" aria-hidden="true"></div>
 
     <header class="navbar">
         <div class="container nav-container">
-            <a href="#home" class="logo group">
-                <div class="logo-icon">J</div>
+            <a href="#home" class="logo" aria-label="Jviscoding home">
+                <div class="logo-icon" aria-hidden="true">J</div>
                 <span class="logo-text">JVISCODING</span>
             </a>
-
-            <nav class="nav-links">
-                <a href="#home" class="nav-item">Home</a>
+            <nav class="nav-links" aria-label="Primary navigation">
                 <a href="#about" class="nav-item">About</a>
-                <a href="#skills" class="nav-item">Skills</a>
-                <a href="#projects" class="nav-item">Projects</a>
-                <a href="#experience" class="nav-item">Learning</a>
-                <a href="#contact" class="nav-item">Contact</a>
+                <a href="#skills" class="nav-item">Stack</a>
+                <a href="#projects" class="nav-item">Systems</a>
+                <a href="#philosophy" class="nav-item">Approach</a>
+                <a href="#learning" class="nav-item">Learning</a>
             </nav>
-
-            <div class="nav-actions">
-                <a href="#contact" class="btn btn-secondary btn-sm">Get in Touch</a>
-            </div>
-
-            <button id="menu-btn" class="mobile-menu-toggle" aria-label="Toggle Menu">
+            <div class="nav-actions"><a href="#contact" class="btn btn-secondary btn-sm">Get in Touch</a></div>
+            <button id="menu-btn" class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
                 <i data-lucide="menu"></i>
             </button>
         </div>
-
-        <div id="mobile-menu" class="mobile-menu">
-            <a href="#home" class="mobile-nav-item">Home</a>
+        <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
             <a href="#about" class="mobile-nav-item">About</a>
-            <a href="#skills" class="mobile-nav-item">Skills</a>
-            <a href="#projects" class="mobile-nav-item">Projects</a>
-            <a href="#experience" class="mobile-nav-item">Learning</a>
+            <a href="#skills" class="mobile-nav-item">Stack</a>
+            <a href="#projects" class="mobile-nav-item">Systems</a>
+            <a href="#philosophy" class="mobile-nav-item">Approach</a>
+            <a href="#learning" class="mobile-nav-item">Learning</a>
             <a href="#contact" class="mobile-nav-item">Contact</a>
-        </div>
+        </nav>
     </header>
 
-    <main class="main-content">
+    <main id="main-content" class="main-content">
+        <div class="glow-orb orb-1" aria-hidden="true"></div>
+        <div class="glow-orb orb-2" aria-hidden="true"></div>
+        <div class="glow-orb orb-3" aria-hidden="true"></div>
 
-        <div class="glow-orb orb-1"></div>
-        <div class="glow-orb orb-2"></div>
-        <div class="glow-orb orb-3"></div>
-
-        <section id="home" class="hero-section">
-            <div class="squared-grid"></div>
-
+        <section id="home" class="hero-section" aria-labelledby="hero-title">
+            <div class="squared-grid" aria-hidden="true"></div>
             <div class="container hero-container">
                 <div class="hero-text-block">
-                    <div class="reveal reveal-left tag-container">
-                        <span class="pulse-dot"></span>
-                        <span class="mono-tag">Available for Systems Engineering</span>
-                    </div>
-
-                    <h1 class="reveal delay-100 hero-title">
-                        Hi, I am <span class="text-gradient">John Vincent Liguit</span>.
-                    </h1>
-
-                    <p class="reveal delay-200 hero-subtitle">Full Stack Developer</p>
-                    <p class="reveal delay-300 hero-description">
-                        Building scalable inventory systems, analytical dashboards, and robust backend-driven web
-                        applications with modern architecture.
-                    </p>
-
+                    <div class="reveal reveal-left tag-container"><span class="pulse-dot"></span><span class="mono-tag">Backend-focused full-stack developer</span></div>
+                    <h1 id="hero-title" class="reveal delay-100 hero-title">Hi, I am <span class="text-gradient">John Vincent Liguit</span>.</h1>
+                    <p class="reveal delay-200 hero-subtitle">I build the systems behind the interface.</p>
+                    <p class="reveal delay-300 hero-description">I enjoy turning operational problems into dependable software: deliberate APIs, clear data models, secure access boundaries, and React experiences that make complex work feel straightforward.</p>
                     <div class="reveal delay-400 hero-actions">
-                        <a href="#projects" class="btn btn-primary">
-                            View Work <i data-lucide="arrow-right"></i>
-                        </a>
-                        <a href="#contact" class="btn btn-dark">
-                            Get in Touch <i data-lucide="mail"></i>
-                        </a>
+                        <a href="#projects" class="btn btn-primary">Explore systems <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+                        <a href="#contact" class="btn btn-dark">Start a conversation <i data-lucide="mail" aria-hidden="true"></i></a>
                     </div>
                 </div>
-
-                <div class="reveal reveal-scale delay-500 terminal-card">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="dot dot-red"></span>
-                            <span class="dot dot-yellow"></span>
-                            <span class="dot dot-green"></span>
-                        </div>
-                        <span class="terminal-filename">system_health_check.php</span>
+                <aside class="reveal reveal-scale delay-500 terminal-card" aria-label="Current engineering stack">
+                    <div class="terminal-header"><div class="terminal-dots" aria-hidden="true"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div><span class="terminal-filename">engineering_profile.log</span></div>
+                    <div class="terminal-body terminal-status">
+                        <p><span class="token-keyword">$</span> system profile</p>
+                        <p class="indent-1"><span class="token-statement">focus</span>: <span class="token-string">backend systems and data flow</span></p>
+                        <p class="indent-1"><span class="token-statement">api</span>: <span class="token-classname">REST + JWT verification</span></p>
+                        <p class="indent-1"><span class="token-statement">data</span>: <span class="token-classname">PostgreSQL, Supabase, Firebase</span></p>
+                        <p class="indent-1"><span class="token-statement">clients</span>: <span class="token-classname">React + TypeScript</span></p>
+                        <p class="indent-1"><span class="token-statement">workflow</span>: <span class="token-classname">Docker, Git, iterative delivery</span></p>
+                        <p class="indent-1 comment">// Building for maintainability, not just the demo.</p>
                     </div>
-                    <div class="terminal-body">
-                        <p><span class="token-keyword">&lt;?php</span></p>
-                        <p class="indent-1"><span class="token-statement">namespace</span> <span
-                                class="token-classname">Core\Systems</span>;</p>
-                        <p class="indent-1"><span class="token-statement">class</span> <span
-                                class="token-classname">InventoryDatabase</span> {</p>
-                        <p class="indent-2"><span class="token-statement">public function</span> <span
-                                class="token-function">getSchemaMetrics</span>() {</p>
-                        <p class="indent-3 comment">// Optimizing active product allocations</p>
-                        <p class="indent-3"><span class="token-keyword">return</span> <span
-                                class="token-variable">$this</span>-&gt;db-&gt;query(<span class="token-string">"SELECT
-                                COUNT(id) FROM inventory_items"</span>);</p>
-                        <p class="indent-2">}</p>
-                        <p class="indent-1">}</p>
-                        <p class="indent-1 comment">// Metrics returned: [Status: OK, Connection: 2.1ms]</p>
-                    </div>
-                </div>
+                </aside>
             </div>
         </section>
 
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="about-grid">
-
-                    <div class="about-header-block">
-                        <div class="reveal reveal-left tag-container">
-                            <span class="static-dot"></span>
-                            <span class="mono-tag">About J.V. Liguit</span>
-                        </div>
-                        <h2 class="reveal delay-100 section-title">
-                            Architecting efficient systems behind elegant platforms.
-                        </h2>
-                        <div class="accent-bar"></div>
-                    </div>
-
-                    <div class="about-body-block">
-                        <p class="reveal delay-200 paragraph-lead">
-                            I am a backend-leaning full-stack engineer who finds joy in optimizing databases, setting up
-                            secure REST APIs, and designing responsive frontends that convey clean system operations.
-                        </p>
-                        <p class="reveal delay-300 paragraph-sub">
-                            Instead of relying on flashy components, my philosophy centers around absolute engineering
-                            cleanliness—structuring dynamic custom database schemas, deploying resilient state-driven
-                            dashboard analytics, and writing clean PHP/TypeScript controllers. I approach projects as
-                            logical systems rather than static assets.
-                        </p>
-
-                        <div class="reveal delay-400 mini-features">
-                            <div class="mini-feature-item">
-                                <div class="feature-icon-box">
-                                    <i data-lucide="server"></i>
-                                </div>
-                                <div>
-                                    <h4 class="feature-title">System Architect</h4>
-                                    <p class="feature-desc">Robust backend microservices and databases.</p>
-                                </div>
-                            </div>
-                            <div class="mini-feature-item">
-                                <div class="feature-icon-box">
-                                    <i data-lucide="layers"></i>
-                                </div>
-                                <div>
-                                    <h4 class="feature-title">Responsive Frontend</h4>
-                                    <p class="feature-desc">Fast UI systems written in modern React.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+        <section id="about" class="about-section" aria-labelledby="about-title">
+            <div class="container"><div class="about-grid">
+                <div class="about-header-block">
+                    <div class="reveal reveal-left tag-container"><span class="static-dot"></span><span class="mono-tag">About J.V. Liguit</span></div>
+                    <h2 id="about-title" class="reveal delay-100 section-title">Thoughtful systems begin with clear boundaries.</h2><div class="accent-bar"></div>
                 </div>
-            </div>
+                <div class="about-body-block">
+                    <p class="reveal delay-200 paragraph-lead">I am a backend-focused full-stack developer who likes the part of a product users do not always see: the data relationships, authorization rules, API contracts, and decisions that make the interface reliable.</p>
+                    <p class="reveal delay-300 paragraph-sub">My work spans Django and Node/TypeScript services, React interfaces, PostgreSQL-backed data, and managed platforms such as Supabase and Firebase. I approach each project as a system to understand, simplify, and evolve, balancing practical delivery with choices that future contributors can follow.</p>
+                    <div class="reveal delay-400 mini-features">
+                        <article class="mini-feature-item"><div class="feature-icon-box"><i data-lucide="server" aria-hidden="true"></i></div><div><h3 class="feature-title">Backend by default</h3><p class="feature-desc">I start with data ownership, validation, security, and the API contract.</p></div></article>
+                        <article class="mini-feature-item"><div class="feature-icon-box"><i data-lucide="layers" aria-hidden="true"></i></div><div><h3 class="feature-title">Full-stack in practice</h3><p class="feature-desc">I connect those decisions to clear, typed, responsive user workflows.</p></div></article>
+                    </div>
+                </div>
+            </div></div>
         </section>
 
-        <section id="skills" class="skills-section">
+        <section id="skills" class="skills-section" aria-labelledby="skills-title">
             <div class="container">
-
-                <div class="section-center-header">
-                    <div class="reveal tag-container center-tag">
-                        <span class="static-dot"></span>
-                        <span class="mono-tag">Technical Arsenal</span>
-                    </div>
-                    <h2 class="reveal delay-100 section-title center-title">
-                        Proven Stack, Engineered Carefully
-                    </h2>
-                </div>
-
+                <div class="section-center-header"><div class="reveal tag-container center-tag"><span class="static-dot"></span><span class="mono-tag">Engineering toolkit</span></div><h2 id="skills-title" class="reveal delay-100 section-title center-title">Tools I use to move a system forward</h2></div>
                 <div class="skills-grid">
-
-                    <!-- Backend -->
-                    <div class="reveal reveal-scale delay-100 skill-card">
-                        <div class="skill-icon-wrap">
-                            <i data-lucide="terminal"></i>
-                        </div>
-                        <h3 class="skill-card-title">Backend</h3>
-                        <ul class="skill-list">
-                            <li><span class="list-dot"></span> PHP (Core Backend Logic)</li>
-                            <li><span class="list-dot"></span> Node.js</li>
-                            <li><span class="list-dot"></span> Express.js Middleware</li>
-                            <li><span class="list-dot"></span> REST API Design</li>
-                            <li><span class="list-dot"></span> JWT Authentication</li>
-                        </ul>
-                    </div>
-
-                    <!-- Frontend -->
-                    <div class="reveal reveal-scale delay-200 skill-card">
-                        <div class="skill-icon-wrap">
-                            <i data-lucide="layout-template"></i>
-                        </div>
-                        <h3 class="skill-card-title">Frontend</h3>
-                        <ul class="skill-list">
-                            <li><span class="list-dot"></span> React.js</li>
-                            <li><span class="list-dot"></span> TypeScript</li>
-                            <li><span class="list-dot"></span> HTML5</li>
-                            <li><span class="list-dot"></span> CSS3</li>
-                        </ul>
-                    </div>
-
-                    <!-- Database & Backend Services -->
-                    <div class="reveal reveal-scale delay-300 skill-card">
-                        <div class="skill-icon-wrap">
-                            <i data-lucide="database"></i>
-                        </div>
-                        <h3 class="skill-card-title">Databases & BaaS</h3>
-                        <ul class="skill-list">
-                            <li><span class="list-dot"></span> PostgreSQL</li>
-                            <li><span class="list-dot"></span> MongoDB</li>
-                            <li><span class="list-dot"></span> Firebase (Auth & Realtime DB)</li>
-                            <li><span class="list-dot"></span> Supabase</li>
-                            <li><span class="list-dot"></span> SQL Optimization</li>
-                            <li><span class="list-dot"></span> Schema Design</li>
-                        </ul>
-                    </div>
-
-                    <!-- Tools -->
-                    <div class="reveal reveal-scale delay-400 skill-card">
-                        <div class="skill-icon-wrap">
-                            <i data-lucide="git-branch"></i>
-                        </div>
-                        <h3 class="skill-card-title">Tools & DevOps</h3>
-                        <ul class="skill-list">
-                            <li><span class="list-dot"></span> Git & GitHub</li>
-                        </ul>
-                    </div>
-
+                    <article class="reveal reveal-scale delay-100 skill-card"><div class="skill-icon-wrap"><i data-lucide="server" aria-hidden="true"></i></div><h3 class="skill-card-title">Services & APIs</h3><ul class="skill-list"><li><span class="list-dot"></span>Django & Django REST Framework</li><li><span class="list-dot"></span>Node.js & Express</li><li><span class="list-dot"></span>REST API design</li><li><span class="list-dot"></span>JWT validation & auth flows</li></ul></article>
+                    <article class="reveal reveal-scale delay-200 skill-card"><div class="skill-icon-wrap"><i data-lucide="layout-template" aria-hidden="true"></i></div><h3 class="skill-card-title">Client Applications</h3><ul class="skill-list"><li><span class="list-dot"></span>React</li><li><span class="list-dot"></span>TypeScript</li><li><span class="list-dot"></span>Routing & feature structure</li><li><span class="list-dot"></span>Accessible responsive UI</li></ul></article>
+                    <article class="reveal reveal-scale delay-300 skill-card"><div class="skill-icon-wrap"><i data-lucide="database" aria-hidden="true"></i></div><h3 class="skill-card-title">Data & Platform</h3><ul class="skill-list"><li><span class="list-dot"></span>PostgreSQL & schema design</li><li><span class="list-dot"></span>Supabase</li><li><span class="list-dot"></span>Firebase Auth & realtime data</li><li><span class="list-dot"></span>Redis fundamentals</li></ul></article>
+                    <article class="reveal reveal-scale delay-400 skill-card"><div class="skill-icon-wrap"><i data-lucide="box" aria-hidden="true"></i></div><h3 class="skill-card-title">Delivery & Practice</h3><ul class="skill-list"><li><span class="list-dot"></span>Docker & local environments</li><li><span class="list-dot"></span>Git & GitHub</li><li><span class="list-dot"></span>Debugging with intent</li><li><span class="list-dot"></span>Incremental refactoring</li></ul></article>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="projects-section">
+        <section id="projects" class="projects-section" aria-labelledby="projects-title">
             <div class="container">
+                <div class="projects-header"><div class="reveal tag-container"><span class="static-dot"></span><span class="mono-tag">Selected systems</span></div><h2 id="projects-title" class="reveal delay-100 section-title">Projects shaped by engineering decisions</h2><p class="reveal delay-200 projects-intro">Each project is presented as a problem to solve: what needed to work, how the pieces communicate, and the choices that kept the system understandable.</p></div>
 
-                <div class="projects-header">
-                    <div class="reveal tag-container">
-                        <span class="static-dot"></span>
-                        <span class="mono-tag">Featured Systems</span>
-                    </div>
-                    <h2 class="reveal delay-100 section-title">Production-Like Applications</h2>
-                </div>
-
-                <div class="reveal reveal-scale featured-project-card">
+                <article class="reveal reveal-scale featured-project-card">
                     <div class="featured-project-grid">
-
                         <div class="project-details">
-
-                            <div class="project-meta-tags">
-                                <span class="badge-priority">Featured Full-Stack System</span>
-                                <span class="meta-text-mono">Firebase + Java POS Architecture</span>
-                            </div>
-
-                            <h3 class="project-title-large">
-                                Point-of-Sale Inventory Management System
-                            </h3>
-
-                            <p class="project-desc-large">
-                                A lightweight Point-of-Sale and inventory management system powered by Firebase for
-                                backend services and Java for core application logic.
-                                The system handles product tracking, sales processing, and inventory updates with a
-                                simple native web interface for authentication and user interaction.
-                            </p>
-
-                            <div class="metrics-sub-grid">
-
-                                <div class="metric-mini-box">
-                                    <div class="metric-label">BACKEND</div>
-                                    <div class="metric-value">Firebase (Auth + Database)</div>
-                                </div>
-
-                                <div class="metric-mini-box">
-                                    <div class="metric-label">CORE ENGINE</div>
-                                    <div class="metric-value">Java Business Logic Layer</div>
-                                </div>
-
-                            </div>
-
-                            <div class="tech-badge-row">
-                                <span class="tech-tag">Java</span>
-                                <span class="tech-tag">Firebase</span>
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                            </div>
-
-                            <div class="project-actions">
-                                <button class="btn btn-primary">
-                                    Open System <i data-lucide="arrow-up-right"></i>
-                                </button>
-
-                                <a class="btn-icon"  target="_blank" href="https://github.com/Jviscoding/PRISM---Point-of-Sales-Reporting-and-Inventory-System-Manager">
-                                    <img class="btn-icon" src="./assets/github_icon.png" alt="">
-                                </a>
-                            </div>
-
+                            <div class="project-meta-tags"><span class="badge-priority">Featured system</span><span class="meta-text-mono">Inventory operations platform</span></div>
+                            <h3 class="project-title-large">Stockora Inventory System</h3>
+                            <p class="project-desc-large">An inventory workspace for organizing products, brands, and dashboard insights without treating the frontend as the source of truth. The goal is a dependable workflow where data changes pass through defined service and authorization layers.</p>
+                            <dl class="decision-grid"><div><dt>Engineering problem</dt><dd>Keep product, brand, and dashboard workflows consistent as the application grows.</dd></div><div><dt>Architecture</dt><dd>React feature modules communicate with a typed API; the service layer owns access checks and persistence.</dd></div><div><dt>Technical decisions</dt><dd>Route-level separation, reusable feature hooks, authenticated requests, and a containerized local environment.</dd></div></dl>
+                            <div class="tech-badge-row"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Express</span><span class="tech-tag">Supabase</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Docker</span></div>
+                            <div class="project-actions"><span class="btn btn-primary project-status"><i data-lucide="construction" aria-hidden="true"></i> In active development</span></div>
                         </div>
-
-                        <div class="project-visual-panel">
-
-                            <!-- Optional UI preview -->
-                            <img src="./assets/inventory_system.png" alt="POS System UI" class="app-screenshot">
-
-                            <div class="simulator-card">
-
-                                <div class="simulator-header">
-                                    <span class="sim-title">SYSTEM STATUS</span>
-                                    <span class="badge-secure">ONLINE</span>
-                                </div>
-
-                                <div class="simulator-body">
-
-                                    <div class="sim-metric-row">
-                                        <div class="sim-labels">
-                                            <span>Transaction Speed</span>
-                                            <span class="white-mono">~180ms</span>
-                                        </div>
-                                        <div class="progress-bar-wrap">
-                                            <div class="progress-bar-fill fill-brand" style="width: 90%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="sim-metric-row">
-                                        <div class="sim-labels">
-                                            <span>Inventory Sync</span>
-                                            <span class="white-mono">Realtime</span>
-                                        </div>
-                                        <div class="progress-bar-wrap">
-                                            <div class="progress-bar-fill fill-brand" style="width: 96%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="sim-metric-row">
-                                        <div class="sim-labels">
-                                            <span>Auth Stability</span>
-                                            <span class="white-mono">99.8%</span>
-                                        </div>
-                                        <div class="progress-bar-wrap">
-                                            <div class="progress-bar-fill fill-muted" style="width: 99%"></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="simulator-footer">
-                                    <span>FIREBASE BACKEND</span>
-                                    <span>JAVA CORE ENGINE ACTIVE</span>
-                                </div>
-
-                            </div>
-
+                        <div class="project-visual-panel architecture-panel">
+                            <figure class="architecture-map"><figcaption>System flow</figcaption><div class="architecture-flow"><div class="architecture-node"><i data-lucide="monitor" aria-hidden="true"></i><span>React client</span><small>Typed feature modules</small></div><div class="architecture-connector" aria-hidden="true"></div><div class="architecture-node active-node"><i data-lucide="shield-check" aria-hidden="true"></i><span>API service</span><small>Auth + business rules</small></div><div class="architecture-connector" aria-hidden="true"></div><div class="architecture-node"><i data-lucide="database" aria-hidden="true"></i><span>Data layer</span><small>Supabase + PostgreSQL</small></div></div><p class="architecture-note">A clear boundary between interface, application logic, and persistence keeps changes traceable.</p></figure>
                         </div>
-
                     </div>
+                </article>
+
+                <article class="reveal reveal-scale featured-project-card">
                     <div class="featured-project-grid">
-
                         <div class="project-details">
-                            <div class="project-meta-tags">
-                                <span class="badge-priority">Featured Real-time Project</span>
-                                <span class="meta-text-mono">Firebase Realtime Architecture</span>
-                            </div>
-
-                            <h3 class="project-title-large">
-                                Real-time Messaging Application
-                            </h3>
-
-                            <p class="project-desc-large">
-                                A lightweight real-time chat system built using Firebase services. It supports instant
-                                messaging, user authentication, and media storage with live synchronization across
-                                clients.
-                                Designed for fast communication without backend server complexity.
-                            </p>
-
-                            <div class="metrics-sub-grid">
-                                <div class="metric-mini-box">
-                                    <div class="metric-label">AUTH SYSTEM</div>
-                                    <div class="metric-value">Firebase Authentication</div>
-                                </div>
-                                <div class="metric-mini-box">
-                                    <div class="metric-label">REAL-TIME ENGINE</div>
-                                    <div class="metric-value">Firestore / Realtime DB Sync</div>
-                                </div>
-                            </div>
-
-                            <div class="tech-badge-row">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Firebase</span>
-                            </div>
-
-                            <div class="project-actions">
-                                <button class="btn btn-primary">
-                                    Open App <i data-lucide="arrow-up-right"></i>
-                                </button>
-                                <a class="btn-icon" target="_blank" href="https://github.com/Jviscoding/MessagingAppReal">
-                                    <img class="btn-icon" inert="" src="./assets/github_icon.png" alt="">
-                                </a>
-                            </div>
+                            <div class="project-meta-tags"><span class="badge-priority">Point of sale</span><span class="meta-text-mono">Realtime inventory and transaction flow</span></div>
+                            <h3 class="project-title-large">PRISM Point-of-Sale & Inventory Manager</h3>
+                            <p class="project-desc-large">A point-of-sale project that connects sales activity to stock awareness. It explores the challenge of keeping user access, product records, and operational updates in sync in a system designed around day-to-day transactions.</p>
+                            <dl class="decision-grid"><div><dt>Engineering problem</dt><dd>Represent sales and inventory changes as connected operational events.</dd></div><div><dt>Architecture</dt><dd>Java application logic works with Firebase authentication and cloud data services.</dd></div><div><dt>Technical decisions</dt><dd>Use managed authentication and realtime updates to focus the project on business rules and workflow design.</dd></div></dl>
+                            <div class="tech-badge-row"><span class="tech-tag">Java</span><span class="tech-tag">Firebase Auth</span><span class="tech-tag">Realtime Data</span><span class="tech-tag">HTML</span><span class="tech-tag">JavaScript</span></div>
+                            <div class="project-actions"><a class="btn btn-primary" target="_blank" rel="noreferrer noopener" href="https://github.com/Jviscoding/PRISM---Point-of-Sales-Reporting-and-Inventory-System-Manager">View repository <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
                         </div>
-
-                        <div class="project-visual-panel">
-
-                            <img src="./assets/messaging_app.png" alt="Real-time Chat App UI Interface"
-                                class="app-screenshot">
-
-                            <div class="simulator-card">
-                                <div class="simulator-header">
-                                    <span class="sim-title">REAL-TIME STATUS</span>
-                                    <span class="badge-secure">LIVE</span>
-                                </div>
-
-                                <div class="simulator-body">
-                                    <div class="sim-metric-row">
-                                        <div class="sim-labels">
-                                            <span>Message Latency</span>
-                                            <span class="white-mono">~120ms</span>
-                                        </div>
-                                        <div class="progress-bar-wrap">
-                                            <div class="progress-bar-fill fill-brand" style="width: 92%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="sim-metric-row">
-                                        <div class="sim-labels">
-                                            <span>Auth Success Rate</span>
-                                            <span class="white-mono">99.9%</span>
-                                        </div>
-                                        <div class="progress-bar-wrap">
-                                            <div class="progress-bar-fill fill-brand" style="width: 99%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="sim-metric-row">
-                                        <div class="sim-labels">
-                                            <span>Storage Sync</span>
-                                            <span class="white-mono">Realtime</span>
-                                        </div>
-                                        <div class="progress-bar-wrap">
-                                            <div class="progress-bar-fill fill-muted" style="width: 95%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="simulator-footer">
-                                    <span>FIREBASE SDK</span>
-                                    <span>REALTIME SYNC ACTIVE</span>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="additional-projects-grid">
-
-                    <div class="reveal reveal-scale delay-100 grid-project-card">
-                        <div class="card-content-top">
-                            <div class="card-pre-title">MATHEMATICS & SIMULATION</div>
-                            <h4 class="card-project-title">Interactive Digital Signal Processing (DSP) Tool</h4>
-                            <p class="card-project-desc">
-                                Lightweight custom audio waveform rendering module designed to represent complex Fourier
-                                transformations on interactive HTML canvases in real-time.
-                            </p>
-                        </div>
-                        <div class="card-content-bottom">
-                            <div class="card-badge-row">
-                                <span class="mini-tag-flat">React</span>
-                                <span class="mini-tag-flat">TypeScript</span>
-                                <span class="mini-tag-flat">Canvas</span>
-                            </div>
-
-                            <div class="dir-container">
-                                <a href="#" class="card-link">
-                                    Launch web app <i data-lucide="chevron-right"></i>
-                                </a>
-                                <a target="_blank" href="https://github.com/Jviscoding/digital-signal-processing-compiled-react-based" class="card-link">
-                                    View source code <i data-lucide="chevron-right"></i>
-                                </a>
-                            </div>
-
+                        <div class="project-visual-panel architecture-panel">
+                            <figure class="architecture-map"><figcaption>Operational data flow</figcaption><div class="architecture-flow compact"><div class="architecture-node"><i data-lucide="shopping-cart" aria-hidden="true"></i><span>POS workflow</span><small>Sales + products</small></div><div class="architecture-connector" aria-hidden="true"></div><div class="architecture-node active-node"><i data-lucide="key-round" aria-hidden="true"></i><span>Firebase</span><small>Identity + sync</small></div><div class="architecture-connector" aria-hidden="true"></div><div class="architecture-node"><i data-lucide="chart-no-axes-column" aria-hidden="true"></i><span>Reports</span><small>Operational visibility</small></div></div><p class="architecture-note">A managed backend kept the project focused on connected business workflows.</p></figure>
                         </div>
                     </div>
-                    <div class="reveal reveal-scale delay-100 grid-project-card">
-                        <div class="card-content-top">
+                </article>
 
-                            <div class="card-pre-title">OPERATING SYSTEMS & SYSTEMS SIMULATION</div>
-
-                            <h4 class="card-project-title">
-                                Process Scheduling & System Behavior Simulator
-                            </h4>
-
-                            <p class="card-project-desc">
-                                An interactive visualization tool for operating system concepts, simulating process
-                                scheduling algorithms,
-                                CPU execution flow, and system resource allocation in real time using canvas-based
-                                rendering.
-                                Designed to demonstrate how different scheduling strategies affect system performance
-                                and throughput.
-                            </p>
-
-                        </div>
-
-                        <div class="card-content-bottom">
-
-                            <div class="card-badge-row">
-                                <span class="mini-tag-flat">JavaScript</span>
-                                <span class="mini-tag-flat">HTML Canvas</span>
-                                <span class="mini-tag-flat">Algorithm Simulation</span>
-                            </div>
-
-                            <div class="dir-container">
-                                <a href="#" class="card-link">
-                                    Launch web app<i data-lucide="chevron-right"></i>
-                                </a>
-                                <a target="_blank" href="https://github.com/Jviscoding/OS_mini_application_tool" class="card-link">
-                                    View source code <i data-lucide="chevron-right"></i>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="reveal reveal-scale delay-100 grid-project-card">
-
-                        <div class="card-content-top">
-
-                            <div class="card-pre-title">IOT & EMBEDDED SYSTEMS</div>
-
-                            <h4 class="card-project-title">
-                                Smart Plant Monitoring System
-                            </h4>
-
-                            <p class="card-project-desc">
-                                An IoT-based monitoring system that tracks real-time environmental conditions such as
-                                soil moisture,
-                                temperature, and humidity. Sensor data is transmitted and visualized through a web
-                                interface for
-                                continuous plant health monitoring and automated insights.
-                            </p>
-
-                        </div>
-
-                        <div class="card-content-bottom">
-
-                            <div class="card-badge-row">
-                                <span class="mini-tag-flat">IoT Sensors</span>
-                                <span class="mini-tag-flat">Real-time Data</span>
-                                <span class="mini-tag-flat">Web Dashboard</span>
-                            </div>
-
-                            <div class="dir-container">
-                                <a href="#" class="card-link">
-                                    Launch web app<i data-lucide="chevron-right"></i>
-                                </a>
-                                <a target="_blank" href="https://github.com/Jviscoding/IoT_Automatic_Plant_Watering" class="card-link">
-                                    View source code <i data-lucide="chevron-right"></i>
-                                </a>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="reveal reveal-scale delay-100 grid-project-card">
-                    <div class="card-content-top">
-                        <div class="card-pre-title">MATHEMATICS & SIMULATION</div>
-                        <h4 class="card-project-title">Numerical Method Tool</h4>
-                        <p class="card-project-desc">
-                            Interactive computational module designed to simulate and visualize numerical methods
-                            and signal transformations in real-time. Implements algorithmic processing of data to
-                            approximate continuous systems using discrete representations on HTML canvas.
-                        </p>
-                    </div>
-                    <div class="card-content-bottom">
-                        <div class="card-badge-row">
-                            <span class="mini-tag-flat">React</span>
-                            <span class="mini-tag-flat">TypeScript</span>
-                            <span class="mini-tag-flat">Canvas</span>
-                        </div>
-                        <div class="dir-container">
-                            <a href="#" class="card-link">
-                                Launch web app<i data-lucide="chevron-right"></i>
-                            </a>
-                            <a target="_blank" href="https://github.com/Jviscoding/Numerical-Method" class="card-link">
-                                View source code <i data-lucide="chevron-right"></i>
-                            </a>
-                    </div>  
-                </div>
-            </div>
-
-
-            </div>
-
-            </div>
-        </section>
-
-        <section id="experience" class="experience-section">
-            <div class="container">
-                <div class="experience-grid">
-
-                    <div class="experience-intro">
-                        <div class="reveal reveal-left tag-container">
-                            <span class="static-dot"></span>
-                            <span class="mono-tag">Continuous Development</span>
-                        </div>
-                        <h2 class="reveal delay-100 section-title">Self-Driven Systems Evolution</h2>
-                        <p class="reveal delay-200 section-intro-desc">
-                            Rather than depending solely on traditional academic paths, I dedicated my focus to parsing
-                            real production problems. Building systems with end-to-end database optimization is how I
-                            expand my capabilities.
-                        </p>
-                    </div>
-
-                    <div class="timeline-container">
-
-                        <!-- 2025 - PRESENT -->
-                        <div class="reveal delay-100 timeline-item">
-                            <div class="timeline-bullet"></div>
-                            <span class="timeline-date">2025 - PRESENT</span>
-                            <h3 class="timeline-title">Modern Backend Infrastructure & Data Systems</h3>
-                            <p class="timeline-desc">
-                                Focused on designing scalable backend systems and integrating modern backend tools such
-                                as Firebase,
-                                Supabase, and MongoDB. Developing real-time applications, improving system performance,
-                                and building
-                                efficient data-driven architectures for production-ready systems.
-                            </p>
-                        </div>
-
-                        <!-- 2024 - 2025 -->
-                        <div class="reveal delay-200 timeline-item">
-                            <div class="timeline-bullet secondary-bullet"></div>
-                            <span class="timeline-date">2024 - 2025</span>
-                            <h3 class="timeline-title">Backend Systems & Security Engineering</h3>
-                            <p class="timeline-desc">
-                                Deepened understanding of backend infrastructure by implementing secure authentication
-                                systems,
-                                including JWT-based authorization, session handling, and API security practices. Worked
-                                extensively
-                                with REST APIs and backend validation workflows to improve system reliability and
-                                security.
-                            </p>
-                        </div>
-
-                        <!-- 2023 - 2024 -->
-                        <div class="reveal delay-300 timeline-item">
-                            <div class="timeline-bullet secondary-bullet"></div>
-                            <span class="timeline-date">2023 - 2024</span>
-                            <h3 class="timeline-title">Programming Fundamentals & Database Integration</h3>
-                            <p class="timeline-desc">
-                                Learned multiple programming languages and built foundational applications by connecting
-                                databases
-                                to real-world systems. Developed understanding of how frontend and backend components
-                                interact,
-                                including database design, CRUD operations, and application structure.
-                            </p>
-                        </div>
-
-                    </div>
-
+                <div class="additional-projects-grid" aria-label="Additional projects">
+                    <article class="reveal reveal-scale delay-100 grid-project-card"><div class="card-content-top"><div class="card-pre-title">REALTIME COMMUNICATION</div><h3 class="card-project-title">Messaging Application</h3><p class="card-project-desc"><strong>Problem:</strong> support authenticated conversations and shared media without building a server from scratch. <strong>Decision:</strong> Firebase services provide identity, realtime synchronization, and storage while the client focuses on communication flow.</p></div><div class="card-content-bottom"><div class="card-badge-row"><span class="mini-tag-flat">Firebase</span><span class="mini-tag-flat">Auth</span><span class="mini-tag-flat">Realtime Data</span><span class="mini-tag-flat">Storage</span></div><a target="_blank" rel="noreferrer noopener" href="https://github.com/Jviscoding/MessagingAppReal" class="card-link">View architecture in code <i data-lucide="chevron-right" aria-hidden="true"></i></a></div></article>
+                    <article class="reveal reveal-scale delay-200 grid-project-card"><div class="card-content-top"><div class="card-pre-title">ALGORITHM VISUALIZATION</div><h3 class="card-project-title">Digital Signal Processing Tool</h3><p class="card-project-desc"><strong>Problem:</strong> make transformations easier to inspect than a static formula. <strong>Decision:</strong> use React, TypeScript, and canvas rendering to pair interactive controls with visual feedback.</p></div><div class="card-content-bottom"><div class="card-badge-row"><span class="mini-tag-flat">React</span><span class="mini-tag-flat">TypeScript</span><span class="mini-tag-flat">Canvas</span></div><a target="_blank" rel="noreferrer noopener" href="https://github.com/Jviscoding/digital-signal-processing-compiled-react-based" class="card-link">View source code <i data-lucide="chevron-right" aria-hidden="true"></i></a></div></article>
+                    <article class="reveal reveal-scale delay-300 grid-project-card"><div class="card-content-top"><div class="card-pre-title">SYSTEMS THINKING</div><h3 class="card-project-title">Process Scheduling Simulator</h3><p class="card-project-desc"><strong>Problem:</strong> expose the trade-offs hidden inside scheduling algorithms. <strong>Decision:</strong> model process state and execution flow visually so different approaches can be compared in context.</p></div><div class="card-content-bottom"><div class="card-badge-row"><span class="mini-tag-flat">JavaScript</span><span class="mini-tag-flat">Canvas</span><span class="mini-tag-flat">Algorithms</span></div><a target="_blank" rel="noreferrer noopener" href="https://github.com/Jviscoding/OS_mini_application_tool" class="card-link">View source code <i data-lucide="chevron-right" aria-hidden="true"></i></a></div></article>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="contact-wrapper">
-
-                    <div class="reveal tag-container center-tag">
-                        <span class="static-dot"></span>
-                        <span class="mono-tag">GET IN TOUCH</span>
-                    </div>
-
-                    <h2 class="reveal delay-100 section-title center-title">
-                        Let's build reliable systems together.
-                    </h2>
-
-                    <p class="reveal delay-200 contact-lead-text">
-                        If you need dynamic database setup, a robust REST backend, or clean modular React dashboards, I
-                        am ready to collaborate.
-                    </p>
-
-                    <div class="reveal reveal-scale delay-300 contact-card">
-                        <div class="contact-card-inner">
-
-                            <div class="email-box">
-                                <div class="icon-badge">
-                                    <i data-lucide="mail"></i>
-                                </div>
-                                <a href="mailto:johnvincentmanalastasliguit@gmail.com" class="email-link">
-                                    johnvincentmanalastasliguit@gmail.com
-                                </a>
-                            </div>
-
-                            <div class="divider"></div>
-
-                            <div class="social-row">
-                                <a target="_blank" href="https://github.com/Jviscoding" class="btn btn-dark btn-md">
-                                    <i data-lucide="github"></i> GitHub
-                                </a>
-                                <a href="#" class="btn btn-dark btn-md">
-                                    <i data-lucide="linkedin"></i> LinkedIn
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <section id="philosophy" class="philosophy-section" aria-labelledby="philosophy-title">
+            <div class="container"><div class="philosophy-grid">
+                <div class="philosophy-intro"><div class="reveal reveal-left tag-container"><span class="static-dot"></span><span class="mono-tag">Engineering philosophy</span></div><h2 id="philosophy-title" class="reveal delay-100 section-title">Useful software is a series of good trade-offs.</h2><p class="reveal delay-200 section-intro-desc">I try to make the next change easier than the last one. That means naming boundaries, validating inputs close to the edge, and choosing the simplest design that can carry the real requirement.</p></div>
+                <div class="principles-grid"><article class="reveal reveal-scale delay-100 principle-card"><i data-lucide="git-branch" aria-hidden="true"></i><h3>Make flow visible</h3><p>Data should have a clear path from user intent to storage and back again.</p></article><article class="reveal reveal-scale delay-200 principle-card"><i data-lucide="shield-check" aria-hidden="true"></i><h3>Secure the boundary</h3><p>Authentication and validation belong in the design, not as late additions.</p></article><article class="reveal reveal-scale delay-300 principle-card"><i data-lucide="wrench" aria-hidden="true"></i><h3>Refactor toward clarity</h3><p>Small, well-scoped improvements keep a growing codebase workable.</p></article></div>
+            </div></div>
         </section>
 
+        <section id="learning" class="experience-section" aria-labelledby="learning-title">
+            <div class="container"><div class="experience-grid">
+                <div class="experience-intro"><div class="reveal reveal-left tag-container"><span class="static-dot"></span><span class="mono-tag">Currently learning</span></div><h2 id="learning-title" class="reveal delay-100 section-title">Growing from feature builder to systems engineer.</h2><p class="reveal delay-200 section-intro-desc">I learn best by applying a concept to a real system, then revisiting the design once I understand the constraints better.</p></div>
+                <div class="timeline-container"><article class="reveal delay-100 timeline-item"><div class="timeline-bullet"></div><span class="timeline-date">CURRENT FOCUS</span><h3 class="timeline-title">Django, service design, and data modeling</h3><p class="timeline-desc">Developing a stronger sense of how domain models, serializers, permissions, and API contracts work together in maintainable backend services.</p></article><article class="reveal delay-200 timeline-item"><div class="timeline-bullet secondary-bullet"></div><span class="timeline-date">IN PRACTICE</span><h3 class="timeline-title">PostgreSQL, Redis, and scalable application patterns</h3><p class="timeline-desc">Exploring query-aware data design, caching fundamentals, background-work patterns, and the operational choices behind responsive systems.</p></article><article class="reveal delay-300 timeline-item"><div class="timeline-bullet secondary-bullet"></div><span class="timeline-date">NEXT ITERATION</span><h3 class="timeline-title">Testing, observability, and deployment discipline</h3><p class="timeline-desc">Building stronger habits around automated tests, meaningful failure signals, Docker-based environments, and reliable delivery workflows.</p></article></div>
+            </div></div>
+        </section>
+
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="container"><div class="contact-wrapper"><div class="reveal tag-container center-tag"><span class="static-dot"></span><span class="mono-tag">Get in touch</span></div><h2 id="contact-title" class="reveal delay-100 section-title center-title">Let’s build something dependable.</h2><p class="reveal delay-200 contact-lead-text">If you are working through an API, data-modeling, authentication, or product workflow problem, I would be glad to connect.</p><div class="reveal reveal-scale delay-300 contact-card"><div class="contact-card-inner"><div class="email-box"><div class="icon-badge"><i data-lucide="mail" aria-hidden="true"></i></div><a href="mailto:johnvincentmanalastasliguit@gmail.com" class="email-link">johnvincentmanalastasliguit@gmail.com</a></div><div class="divider"></div><div class="social-row"><a target="_blank" rel="noreferrer noopener" href="https://github.com/Jviscoding" class="btn btn-dark btn-md"><i data-lucide="github" aria-hidden="true"></i> GitHub</a></div></div></div></div></div>
+        </section>
     </main>
-
-    <footer class="main-footer">
-        <div class="container footer-container">
-            <p class="footer-copy">
-                &copy; 2026 Jviscoding. Designed for backend and structural excellence.
-            </p>
-            <p class="footer-credit">
-                Built with <i data-lucide="heart" class="heart-icon"></i> in code & structure
-            </p>
-        </div>
-    </footer>
-
+    <footer class="main-footer"><div class="container footer-container"><p class="footer-copy">&copy; 2026 Jviscoding. Built around systems, clarity, and steady improvement.</p><p class="footer-credit">Built with <i data-lucide="heart" class="heart-icon" aria-hidden="true"></i> in code &amp; structure</p></div></footer>
     <script src="script.js"></script>
 </body>
-
 </html>
