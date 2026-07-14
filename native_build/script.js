@@ -184,16 +184,21 @@ document.addEventListener('DOMContentLoaded', () => {
         node.addEventListener('focus', () => activateNode(node));
         node.addEventListener('mouseenter', () => activateNode(node));
     });
-
     // Skills matrix explorer engine
     const inspector = document.querySelector('.skill-inspector');
     document.querySelectorAll('.skill-chip').forEach(chip => {
         const updateInspector = () => {
             document.querySelectorAll('.skill-chip').forEach(item => item.classList.toggle('is-selected', item === chip));
             if (!inspector) return;
-            inspector.querySelector('h3').textContent = chip.dataset.skill;
-            inspector.querySelector('p:not(.related-skills)').textContent = chip.dataset.description;
-            inspector.querySelector('.related-skills').textContent = chip.dataset.related;
+
+            // SAFE CHECKS ADDED HERE:
+            const inspectorTitle = inspector.querySelector('h3');
+            const inspectorDesc = inspector.querySelector('p:not(.related-skills)');
+            const inspectorRelated = inspector.querySelector('.related-skills');
+
+            if (inspectorTitle) inspectorTitle.textContent = chip.dataset.skill;
+            if (inspectorDesc) inspectorDesc.textContent = chip.dataset.description;
+            if (inspectorRelated) inspectorRelated.textContent = chip.dataset.related;
         };
         chip.addEventListener('click', updateInspector);
         chip.addEventListener('mouseenter', updateInspector);
